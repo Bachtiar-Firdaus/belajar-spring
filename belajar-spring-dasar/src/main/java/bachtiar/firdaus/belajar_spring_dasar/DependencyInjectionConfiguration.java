@@ -28,6 +28,7 @@ public class DependencyInjectionConfiguration {
         return new Bar();
     }
 
+    // @Qualifier("fooSecond") ini untuk memilih dependency injection
     @Bean
     public FooBar fooBar(@Qualifier("fooSecond") Foo foo, Bar bar) {
         return new FooBar(foo, bar);
