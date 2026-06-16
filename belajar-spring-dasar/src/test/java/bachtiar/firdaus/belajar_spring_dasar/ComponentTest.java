@@ -1,6 +1,7 @@
 package bachtiar.firdaus.belajar_spring_dasar;
 
 
+import bachtiar.firdaus.belajar_spring_dasar.data.MultiFoo;
 import bachtiar.firdaus.belajar_spring_dasar.repository.CategoryRepository;
 import bachtiar.firdaus.belajar_spring_dasar.repository.CustomerRepository;
 import bachtiar.firdaus.belajar_spring_dasar.repository.ProductRepository;
@@ -67,11 +68,11 @@ public class ComponentTest {
 
     }
 
-//    @Test
-//    void testObjectProvider() {
-//
-//        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
-//        Assertions.assertEquals(3, multiFoo.getFoos().size());
-//
-//    }
+    @Test
+    void testObjectProvider() {
+
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+        Assertions.assertEquals(3, multiFoo.getFoos().size());
+
+    }
 }
