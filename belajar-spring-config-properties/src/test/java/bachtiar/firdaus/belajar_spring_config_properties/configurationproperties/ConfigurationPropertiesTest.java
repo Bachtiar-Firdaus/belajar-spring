@@ -42,14 +42,14 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals(1, properties.getVersion());
         Assertions.assertEquals(false, properties.isProductionMode());
     }
-//
-//    @Test
-//    void testDatabaseProperties() {
-//        Assertions.assertEquals("eko", properties.getDatabase().getUsername());
-//        Assertions.assertEquals("rahasia", properties.getDatabase().getPassword());
-//        Assertions.assertEquals("belajar", properties.getDatabase().getDatabase());
-//        Assertions.assertEquals("jdbc:contoh", properties.getDatabase().getUrl());
-//    }
+
+    @Test
+    void testDatabaseProperties() {
+        Assertions.assertEquals("eko", properties.getDatabase().getUsername());
+        Assertions.assertEquals("rahasia", properties.getDatabase().getPassword());
+        Assertions.assertEquals("belajar", properties.getDatabase().getDatabase());
+        Assertions.assertEquals("jdbc:contoh", properties.getDatabase().getUrl());
+    }
 //
 //    @Test
 //    void testCollection() {
