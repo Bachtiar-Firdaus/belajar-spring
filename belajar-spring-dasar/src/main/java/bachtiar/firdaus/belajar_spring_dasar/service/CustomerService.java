@@ -9,17 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerService {
 
+//    @Getter
+//    @Autowired
+//    private CustomerRepository customerRepository;
+
     @Getter
     @Autowired
-    private CustomerRepository customerRepository;
+    @Qualifier("normalCustomerRepository")
+    private CustomerRepository normalCustomerRepository;
 
-//    @Getter
-//    @Autowired
-//    @Qualifier("normalCustomerRepository")
-//    private CustomerRepository normalCustomerRepository;
-//
-//    @Getter
-//    @Autowired
-//    @Qualifier("premiumCustomerRepository")
-//    private CustomerRepository premiumCustomerRepository;
+    @Getter
+    @Autowired
+    @Qualifier("premiumCustomerRepository")
+    private CustomerRepository premiumCustomerRepository;
 }
