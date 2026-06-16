@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_dasar;
 
 import bachtiar.firdaus.belajar_spring_dasar.listener.LoginAgainSuccessListener;
 import bachtiar.firdaus.belajar_spring_dasar.listener.LoginSuccessListener;
+import bachtiar.firdaus.belajar_spring_dasar.listener.UserListener;
 import bachtiar.firdaus.belajar_spring_dasar.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ public class EventListenerTest {
             UserService.class,
             LoginSuccessListener.class,
             LoginAgainSuccessListener.class,
-//            UserListener.class
+            UserListener.class
     })
     public static class TestConfiguration {
 
