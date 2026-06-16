@@ -2,8 +2,10 @@ package bachtiar.firdaus.belajar_spring_dasar;
 
 
 import bachtiar.firdaus.belajar_spring_dasar.repository.CategoryRepository;
+import bachtiar.firdaus.belajar_spring_dasar.repository.CustomerRepository;
 import bachtiar.firdaus.belajar_spring_dasar.repository.ProductRepository;
 import bachtiar.firdaus.belajar_spring_dasar.service.CategoryService;
+import bachtiar.firdaus.belajar_spring_dasar.service.CustomerService;
 import bachtiar.firdaus.belajar_spring_dasar.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -50,19 +52,21 @@ public class ComponentTest {
 
     }
 
-//    @Test
-//    void testFieldDependencyInjection() {
-//
-//        CustomerService customerService = applicationContext.getBean(CustomerService.class);
-//
-//        CustomerRepository normalCustomerRepository = applicationContext.getBean("normalCustomerRepository",CustomerRepository.class);
+    @Test
+    void testFieldDependencyInjection() {
+
+        CustomerService customerService = applicationContext.getBean(CustomerService.class);
+        CustomerRepository customerRepository = applicationContext.getBean(CustomerRepository.class);
+        Assertions.assertSame(customerRepository, customerService.getCustomerRepository());
+
+//        CustomerRepository normalCustomerRepository = applicationContext.getBean("normalCustomerRepository", CustomerRepository.class);
 //        CustomerRepository premiumCustomerRepository = applicationContext.getBean("premiumCustomerRepository",CustomerRepository.class);
 //
 //        Assertions.assertSame(normalCustomerRepository, customerService.getNormalCustomerRepository());
 //        Assertions.assertSame(premiumCustomerRepository, customerService.getPremiumCustomerRepository());
-//
-//    }
-//
+
+    }
+
 //    @Test
 //    void testObjectProvider() {
 //
