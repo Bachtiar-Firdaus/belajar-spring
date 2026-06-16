@@ -1,5 +1,6 @@
 package bachtiar.firdaus.belajar_spring_dasar.application;
 
+import bachtiar.firdaus.belajar_spring_dasar.data.Bar;
 import bachtiar.firdaus.belajar_spring_dasar.data.Foo;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
