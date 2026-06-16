@@ -13,10 +13,10 @@ public class LifeCycleConfiguration {
         return new Connection();
     }
 
-    // @Bean(initMethod = "start", destroyMethod = "stop")
-//    @Bean
-//    public Server server(){
-//        return new Server();
-//    }
+//     @Bean(initMethod = "start", destroyMethod = "stop")
+    @Bean
+    public Server server(){
+        return new Server();
+    }
 
 }
