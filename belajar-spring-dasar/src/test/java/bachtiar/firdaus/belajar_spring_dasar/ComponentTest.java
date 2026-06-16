@@ -1,6 +1,7 @@
 package bachtiar.firdaus.belajar_spring_dasar;
 
 
+import bachtiar.firdaus.belajar_spring_dasar.repository.ProductRepository;
 import bachtiar.firdaus.belajar_spring_dasar.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,14 +30,14 @@ public class ComponentTest {
 
     }
 
-//    @Test
-//    void testConstructorDependencyInjection(){
-//        ProductService productService = applicationContext.getBean(ProductService.class);
-//        ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
-//
-//        Assertions.assertSame(productRepository, productService.getProductRepository());
-//    }
-//
+    @Test
+    void testConstructorDependencyInjection(){
+        ProductService productService = applicationContext.getBean(ProductService.class);
+        ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
+
+        Assertions.assertSame(productRepository, productService.getProductRepository());
+    }
+
 //    @Test
 //    void testSetterDependencyInjection() {
 //

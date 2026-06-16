@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan(basePackages = {
-//        "bachtiar.firdaus.belajar_spring_dasar.repository",
+        "bachtiar.firdaus.belajar_spring_dasar.repository",
         "bachtiar.firdaus.belajar_spring_dasar.service",
 //        "bachtiar.firdaus.belajar_spring_dasar.configuration",
 })
