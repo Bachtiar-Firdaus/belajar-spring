@@ -1,6 +1,7 @@
 package bachtiar.firdaus.belajar_spring_config_properties.configurationproperties;
 
 
+import bachtiar.firdaus.belajar_spring_config_properties.converter.StringToDateConverter;
 import bachtiar.firdaus.belajar_spring_config_properties.properties.ApplicationProperties;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -24,17 +25,17 @@ public class ConfigurationPropertiesTest {
     @Autowired
     private ApplicationProperties properties;
 
-//    @Autowired
-//    private ConversionService conversionService;
+    @Autowired
+    private ConversionService conversionService;
 
-//    @Test
-//    void testConversionService() {
-//        Assertions.assertTrue(conversionService.canConvert(String.class, Duration.class));
-//        Assertions.assertTrue(conversionService.canConvert(String.class, Date.class));
-//
-//        Duration result = conversionService.convert("10s", Duration.class);
-//        Assertions.assertEquals(Duration.ofSeconds(10), result);
-//    }
+    @Test
+    void testConversionService() {
+        Assertions.assertTrue(conversionService.canConvert(String.class, Duration.class));
+        Assertions.assertTrue(conversionService.canConvert(String.class, Date.class));
+
+        Duration result = conversionService.convert("10s", Duration.class);
+        Assertions.assertEquals(Duration.ofSeconds(10), result);
+    }
 
     @Test
     void testConfigurationProperties() {
@@ -72,32 +73,32 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals("Finance Role", properties.getRoles().get("finance").getName());
     }
 
-//    @Test
-//    void testDuration() {
-//        Assertions.assertEquals(Duration.ofSeconds(10), properties.getDefaultTimeout());
-//    }
-//
-//    @Test
-//    void testCustomConverter() {
-//        Date expireDate = properties.getExpireDate();
-//
-//        var dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        Assertions.assertEquals("2020-10-10", dateFormat.format(expireDate));
-//    }
-//
+    @Test
+    void testDuration() {
+        Assertions.assertEquals(Duration.ofSeconds(10), properties.getDefaultTimeout());
+    }
+
+    @Test
+    void testCustomConverter() {
+        Date expireDate = properties.getExpireDate();
+
+        var dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Assertions.assertEquals("2020-10-10", dateFormat.format(expireDate));
+    }
+
     @SpringBootApplication
     @EnableConfigurationProperties({
             ApplicationProperties.class
     })
-//    @Import(StringToDateConverter.class)
+    @Import(StringToDateConverter.class)
     public static class TestApplication {
 
-//        @Bean
-//        public ConversionService conversionService(StringToDateConverter stringToDateConverter){
-//            ApplicationConversionService conversionService = new ApplicationConversionService();
-//            conversionService.addConverter(stringToDateConverter);
-//            return conversionService;
-//        }
+        @Bean
+        public ConversionService conversionService(StringToDateConverter stringToDateConverter){
+            ApplicationConversionService conversionService = new ApplicationConversionService();
+            conversionService.addConverter(stringToDateConverter);
+            return conversionService;
+        }
 
     }
 
