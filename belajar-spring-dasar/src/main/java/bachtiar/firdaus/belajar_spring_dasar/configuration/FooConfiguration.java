@@ -1,4 +1,4 @@
-package bachtiar.firdaus.belajar_spring_dasar;
+package bachtiar.firdaus.belajar_spring_dasar.configuration;
 
 import bachtiar.firdaus.belajar_spring_dasar.data.Foo;
 import org.springframework.context.annotation.Bean;
