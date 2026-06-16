@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_dasar.application;
 
 import bachtiar.firdaus.belajar_spring_dasar.data.Bar;
 import bachtiar.firdaus.belajar_spring_dasar.data.Foo;
+import bachtiar.firdaus.belajar_spring_dasar.listener.AppStartingListener;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,8 +28,8 @@ public class FooApplication {
 
   public static void main(String[] args) {
     SpringApplication application = new SpringApplication(FooApplication.class);
-//    application.setBannerMode(Banner.Mode.OFF);
-//    application.setListeners(List.of(new AppStartingListener()));
+    application.setBannerMode(Banner.Mode.OFF);
+    application.setListeners(List.of(new AppStartingListener()));
 
     ConfigurableApplicationContext applicationContext = application.run(args);
 
