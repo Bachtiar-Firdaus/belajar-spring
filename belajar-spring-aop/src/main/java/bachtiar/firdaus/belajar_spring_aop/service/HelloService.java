@@ -15,10 +15,10 @@ public class HelloService {
         return "Hello " + name;
     }
 
-//    public String hello(String firstName, String lastName) {
-//        log.info("Call HelloService.hello()");
-//        return "Hello " + firstName + " " + lastName;
-//    }
+    public String hello(String firstName, String lastName) {
+        log.info("Call HelloService.hello()");
+        return "Hello " + firstName + " " + lastName;
+    }
 
     public String bye(String name) {
         log.info("Call HelloService.bye()");

@@ -51,16 +51,16 @@ public class LogAspect {
 
     }
 
-    @Before("pointcutHelloServiceStringParam()")
-    public void logStringParameter(JoinPoint joinPoint) {
-        String value = (String) joinPoint.getArgs()[0];
-        log.info("Execute method with parameter : " + value);
-    }
-
-//    @Before("pointcutHelloServiceStringParam() && args(name)")
-//    public void logStringParameter(String name) {
-//        log.info("Execute method with parameter : " + name);
+//    @Before("pointcutHelloServiceStringParam()")
+//    public void logStringParameter(JoinPoint joinPoint) {
+//        String value = (String) joinPoint.getArgs()[0];
+//        log.info("Execute method with parameter : " + value);
 //    }
+
+    @Before("pointcutHelloServiceStringParam() && args(name)")
+    public void logStringParameter(String name) {
+        log.info("Execute method with parameter : " + name);
+    }
 
     // Diubah ke bachtiar.firdaus.belajar_spring_aop
     @Pointcut("execution(* bachtiar.firdaus.belajar_spring_aop.service.*.*(..))")
