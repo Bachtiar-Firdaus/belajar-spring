@@ -10,12 +10,12 @@ import org.springframework.test.context.TestPropertySource;
 @TestPropertySource("classpath:application-test.properties")
 public class LoggingTest {
 
-//    @Test
-//    void testLongLogging() {
-//        for (int i = 0; i < 100_000; i++) {
-//            log.warn("Hello World {}", i);
-//        }
-//    }
+    @Test
+    void testLongLogging() {
+        for (int i = 0; i < 100_000; i++) {
+            log.warn("Hello World {}", i);
+        }
+    }
 
     @Test
     void testLog() {

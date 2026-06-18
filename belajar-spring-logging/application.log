@@ -1,2 +1,15 @@
-2026-06-18T14:32:02.209+07:00  WARN 33592 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Spring
-2026-06-18T14:32:02.210+07:00 ERROR 33592 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
+2026-06-18T14:36:08.491+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99985
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99986
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99987
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99988
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99989
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99990
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99991
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99992
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99993
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99994
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99995
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99996
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99997
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99998
+2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99999
