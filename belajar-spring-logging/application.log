@@ -13,3 +13,11 @@
 2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99997
 2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99998
 2026-06-18T14:36:08.492+07:00  WARN 20392 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Hello World 99999
+2026-06-18T14:41:10.431+07:00  INFO 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Starting LoggingTest using Java 25.0.2 with PID 29952 (started by Bachtiar F in D:\udemy\belajar-spring\belajar-spring-logging)
+2026-06-18T14:41:10.432+07:00  INFO 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : No active profile set, falling back to 1 default profile: "default"
+2026-06-18T14:41:10.628+07:00  INFO 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Started LoggingTest in 0.367 seconds (process running for 0.958)
+2026-06-18T14:41:10.906+07:00  INFO 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Java
+2026-06-18T14:41:10.906+07:00  WARN 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Spring
+2026-06-18T14:41:10.906+07:00 ERROR 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
+2026-06-18T14:41:40.639+07:00  WARN 14968 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Spring
+2026-06-18T14:41:40.640+07:00 ERROR 14968 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
