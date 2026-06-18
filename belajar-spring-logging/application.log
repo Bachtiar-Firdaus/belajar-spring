@@ -1,0 +1,2 @@
+2026-06-18T14:32:02.209+07:00  WARN 33592 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Spring
+2026-06-18T14:32:02.210+07:00 ERROR 33592 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
