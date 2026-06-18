@@ -7,7 +7,7 @@ import org.springframework.test.context.TestPropertySource;
 
 @Slf4j
 @SpringBootTest
-//@TestPropertySource("classpath:application-test.properties")
+@TestPropertySource("classpath:application-test.properties")
 public class LoggingTest {
 
 //    @Test
