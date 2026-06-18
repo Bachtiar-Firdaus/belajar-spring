@@ -1,28 +1,28 @@
 package bachtiar.firdaus.belajar_spring_aop.aspect;
 
-//import org.aspectj.lang.JoinPoint;
-//import org.aspectj.lang.ProceedingJoinPoint;
-//import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-//import org.aspectj.lang.annotation.Before;
-//import org.aspectj.lang.annotation.Pointcut;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
 public class LogAspect {
 
-//    // Membuat logger manual menggunakan SLF4J bawaan Spring
-//    private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
-//
-//    // Diubah dari programmerzamannow menjadi package lokal Anda
-//    @Pointcut("target(bachtiar.firdaus.belajar_spring_aop.service.HelloService)")
-//    public void helloServiceMethod() {
-//
-//    }
-//
+    // Membuat logger manual menggunakan SLF4J bawaan Spring
+    private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
+
+    // Diubah dari programmerzamannow menjadi package lokal Anda
+    @Pointcut("target(bachtiar.firdaus.belajar_spring_aop.service.HelloService)")
+    public void helloServiceMethod() {
+
+    }
+
 //    @Before("helloServiceMethod()")
 //    public void beforeHelloServiceMethod(JoinPoint joinPoint) {
 //        String className = joinPoint.getTarget().getClass().getName();
