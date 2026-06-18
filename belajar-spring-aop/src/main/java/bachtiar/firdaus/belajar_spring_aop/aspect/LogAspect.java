@@ -30,20 +30,20 @@ public class LogAspect {
         log.info("Before " + className + "." + methodName + "()");
     }
 
-//    @Around("helloServiceMethod()")
-//    public Object aroundHelloServiceMethod(ProceedingJoinPoint joinPoint) throws Throwable {
-//        String className = joinPoint.getTarget().getClass().getName();
-//        String methodName = joinPoint.getSignature().getName();
-//        try {
-//            log.info("Around Before " + className + "." + methodName + "()");
-//            return joinPoint.proceed(joinPoint.getArgs());
-//        } catch (Throwable throwable) {
-//            log.info("Around Error " + className + "." + methodName + "()");
-//            throw throwable;
-//        } finally {
-//            log.info("Around Finally " + className + "." + methodName + "()");
-//        }
-//    }
+    @Around("helloServiceMethod()")
+    public Object aroundHelloServiceMethod(ProceedingJoinPoint joinPoint) throws Throwable {
+        String className = joinPoint.getTarget().getClass().getName();
+        String methodName = joinPoint.getSignature().getName();
+        try {
+            log.info("Around Before " + className + "." + methodName + "()");
+            return joinPoint.proceed(joinPoint.getArgs());
+        } catch (Throwable throwable) {
+            log.info("Around Error " + className + "." + methodName + "()");
+            throw throwable;
+        } finally {
+            log.info("Around Finally " + className + "." + methodName + "()");
+        }
+    }
 
 //    // Diubah ke bachtiar.firdaus.belajar_spring_aop
 //    @Pointcut("execution(* bachtiar.firdaus.belajar_spring_aop.service.HelloService.*(java.lang.String))")
