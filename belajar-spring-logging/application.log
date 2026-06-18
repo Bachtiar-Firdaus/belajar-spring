@@ -21,3 +21,5 @@
 2026-06-18T14:41:10.906+07:00 ERROR 29952 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
 2026-06-18T14:41:40.639+07:00  WARN 14968 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Spring
 2026-06-18T14:41:40.640+07:00 ERROR 14968 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
+2026-06-18T14:43:52.688+07:00  WARN 13672 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Spring
+2026-06-18T14:43:52.688+07:00 ERROR 13672 --- [belajar-spring-logging] [main] b.f.belajar_spring_logging.LoggingTest   : Belajar Programmer Zaman Now
