@@ -1,11 +1,14 @@
 package bachtiar.firdaus.belajar_spring_aop.service;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-@Slf4j
 public class HelloService {
+
+    // Membuat logger manual menggunakan SLF4J bawaan Spring Boot
+    private static final Logger log = LoggerFactory.getLogger(HelloService.class);
 
     public String hello(String name) {
         log.info("Call HelloService.hello()");

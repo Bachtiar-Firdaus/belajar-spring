@@ -2,7 +2,9 @@ package bachtiar.firdaus.belajar_spring_aop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+@EnableAspectJAutoProxy
 @SpringBootApplication
 public class BelajarSpringAopApplication {
 

@@ -1,4 +1,4 @@
-package bachtiar.firdaus.belajar_spring_aop.servie;
+package bachtiar.firdaus.belajar_spring_aop.service;
 
 import bachtiar.firdaus.belajar_spring_aop.service.HelloService;
 import org.junit.jupiter.api.Assertions;
