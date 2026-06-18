@@ -23,13 +23,13 @@ public class LogAspect {
 
     }
 
-//    @Before("helloServiceMethod()")
-//    public void beforeHelloServiceMethod(JoinPoint joinPoint) {
-//        String className = joinPoint.getTarget().getClass().getName();
-//        String methodName = joinPoint.getSignature().getName();
-//        log.info("Before " + className + "." + methodName + "()");
-//    }
-//
+    @Before("helloServiceMethod()")
+    public void beforeHelloServiceMethod(JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getName();
+        String methodName = joinPoint.getSignature().getName();
+        log.info("Before " + className + "." + methodName + "()");
+    }
+
 //    @Around("helloServiceMethod()")
 //    public Object aroundHelloServiceMethod(ProceedingJoinPoint joinPoint) throws Throwable {
 //        String className = joinPoint.getTarget().getClass().getName();
@@ -44,7 +44,7 @@ public class LogAspect {
 //            log.info("Around Finally " + className + "." + methodName + "()");
 //        }
 //    }
-//
+
 //    // Diubah ke bachtiar.firdaus.belajar_spring_aop
 //    @Pointcut("execution(* bachtiar.firdaus.belajar_spring_aop.service.HelloService.*(java.lang.String))")
 //    public void pointcutHelloServiceStringParam() {
