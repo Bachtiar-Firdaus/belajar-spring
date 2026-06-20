@@ -49,14 +49,14 @@ class AuthControllerTest {
         );
     }
 
-//    @Test
-//    void getUser() throws Exception {
-//        mockMvc.perform(
-//                get("/auth/user")
-//                        .cookie(new Cookie("username", "eko"))
-//        ).andExpectAll(
-//                status().isOk(),
-//                content().string(Matchers.containsString("Hello eko"))
-//        );
-//    }
+    @Test
+    void getUser() throws Exception {
+        mockMvc.perform(
+                get("/auth/user")
+                        .cookie(new Cookie("username", "eko"))
+        ).andExpectAll(
+                status().isOk(),
+                content().string(Matchers.containsString("Hello eko"))
+        );
+    }
 }

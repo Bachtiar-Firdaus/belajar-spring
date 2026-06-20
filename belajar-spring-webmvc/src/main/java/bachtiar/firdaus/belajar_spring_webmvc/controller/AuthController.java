@@ -36,8 +36,8 @@ public class AuthController {
         }
     }
 
-//    @GetMapping(path = "/auth/user")
-//    public ResponseEntity<String> getUser(@CookieValue("username") String username){
-//        return ResponseEntity.ok("Hello " + username);
-//    }
+    @GetMapping(path = "/auth/user")
+    public ResponseEntity<String> getUser(@CookieValue("username") String username){
+        return ResponseEntity.ok("Hello " + username);
+    }
 }
