@@ -63,12 +63,12 @@ class HelloControllerTest {
         );
     }
 
-//    @Test
-//    void helloViewRedirect() throws Exception {
-//        mockMvc.perform(
-//                get("/web/hello")
-//        ).andExpectAll(
-//                status().is3xxRedirection()
-//        );
-//    }
+    @Test
+    void helloViewRedirect() throws Exception {
+        mockMvc.perform(
+                get("/web/hello")
+        ).andExpectAll(
+                status().is3xxRedirection()
+        );
+    }
 }
