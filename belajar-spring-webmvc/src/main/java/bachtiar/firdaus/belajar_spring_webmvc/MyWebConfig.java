@@ -1,5 +1,6 @@
 package bachtiar.firdaus.belajar_spring_webmvc;
 
+import bachtiar.firdaus.belajar_spring_webmvc.interceptor.SessionInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -11,9 +12,9 @@ import java.util.List;
 @Configuration
 public class MyWebConfig implements WebMvcConfigurer {
 
-//    @Autowired
-//    private SessionInterceptor sessionInterceptor;
-//
+    @Autowired
+    private SessionInterceptor sessionInterceptor;
+
 //    @Autowired
 //    private PartnerArgumentResolver partnerArgumentResolver;
 //
@@ -22,10 +23,10 @@ public class MyWebConfig implements WebMvcConfigurer {
 //        resolvers.add(partnerArgumentResolver);
 //    }
 //
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(sessionInterceptor).addPathPatterns("/user/*");
-//        //  /user/eko, /user/create
-//        // /user/eko/kuriawan X
-//    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(sessionInterceptor).addPathPatterns("/user/*");
+        //  /user/eko, /user/create
+        // /user/eko/kuriawan X
+    }
 }
