@@ -52,17 +52,17 @@ class HelloControllerTest {
         );
     }
 
-//    @Test
-//    void helloView() throws Exception {
-//        mockMvc.perform(
-//                get("/web/hello").queryParam("name", "Daus")
-//        ).andExpectAll(
-//                status().isOk(),
-//                content().string(Matchers.containsString("Belajar View")),
-//                content().string(Matchers.containsString("Hello Daus"))
-//        );
-//    }
-//
+    @Test
+    void helloView() throws Exception {
+        mockMvc.perform(
+                get("/web/hello").queryParam("name", "Daus")
+        ).andExpectAll(
+                status().isOk(),
+                content().string(Matchers.containsString("Belajar View")),
+                content().string(Matchers.containsString("Hello Daus"))
+        );
+    }
+
 //    @Test
 //    void helloViewRedirect() throws Exception {
 //        mockMvc.perform(
