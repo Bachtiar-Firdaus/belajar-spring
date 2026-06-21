@@ -28,9 +28,9 @@ public class Category {
 
     private String name;
 
-//    @OneToMany(mappedBy = "category")
-//    private List<Product> products;
-//
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
+
 //    @CreatedDate
 //    @Column(name = "created_date")
 //    private Instant createdDate;
