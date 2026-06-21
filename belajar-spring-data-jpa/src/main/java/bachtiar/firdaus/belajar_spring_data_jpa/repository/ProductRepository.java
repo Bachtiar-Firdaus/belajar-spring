@@ -29,14 +29,14 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 //    Slice<Product> findAllByCategory(Category category, Pageable pageable);
 //
 //    Stream<Product> streamAllByCategory(Category category);
-//
-//    @Modifying
-//    @Query("delete from Product p where p.name = :name")
-//    int deleteProductUsingName(@Param("name") String name);
-//
-//    @Modifying
-//    @Query("update Product p set p.price = 0 where p.id = :id")
-//    int updateProductPriceToZero(@Param("id") Long id);
+
+    @Modifying
+    @Query("delete from Product p where p.name = :name")
+    int deleteProductUsingName(@Param("name") String name);
+
+    @Modifying
+    @Query("update Product p set p.price = 0 where p.id = :id")
+    int updateProductPriceToZero(@Param("id") Long id);
 
     @Query(
             value = "select p from Product p where p.name like :name or p.category.name like :name",
