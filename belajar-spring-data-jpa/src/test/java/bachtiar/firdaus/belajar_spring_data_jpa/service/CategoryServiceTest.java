@@ -27,17 +27,17 @@ class CategoryServiceTest {
         });
     }
 
-//    @Test
-//    void programmatic() {
-//        assertThrows(RuntimeException.class, () -> {
-//            categoryService.createCategories();
-//        });
-//    }
-//
-//    @Test
-//    void manual() {
-//        assertThrows(RuntimeException.class, () -> {
-//            categoryService.manual();
-//        });
-//    }
+    @Test
+    void programmatic() {
+        assertThrows(RuntimeException.class, () -> {
+            categoryService.createCategories();
+        });
+    }
+
+    @Test
+    void manual() {
+        assertThrows(RuntimeException.class, () -> {
+            categoryService.manual();
+        });
+    }
 }
