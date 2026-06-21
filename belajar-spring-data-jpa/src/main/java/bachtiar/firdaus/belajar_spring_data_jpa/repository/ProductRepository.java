@@ -37,12 +37,12 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 //    @Modifying
 //    @Query("update Product p set p.price = 0 where p.id = :id")
 //    int updateProductPriceToZero(@Param("id") Long id);
-//
-//    @Query(
-//            value = "select p from Product p where p.name like :name or p.category.name like :name",
-//            countQuery = "select count(p) from Product p where p.name like :name or p.category.name like :name"
-//    )
-//    Page<Product> searchProduct(@Param("name") String name, Pageable pageable);
+
+    @Query(
+            value = "select p from Product p where p.name like :name or p.category.name like :name",
+            countQuery = "select count(p) from Product p where p.name like :name or p.category.name like :name"
+    )
+    Page<Product> searchProduct(@Param("name") String name, Pageable pageable);
 
     List<Product> searchProductUsingName(@Param("name") String name, Pageable pageable);
 
