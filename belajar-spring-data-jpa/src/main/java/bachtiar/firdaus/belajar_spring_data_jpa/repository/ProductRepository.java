@@ -55,8 +55,8 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 
     List<Product> findAllByCategory_Name(String name);
 
-//    List<Product> findAllByCategory_Name(String name, Sort sort);
-//
+    List<Product> findAllByCategory_Name(String name, Sort sort);
+
 //    Page<Product> findAllByCategory_Name(String name, Pageable pageable);
 
 }
