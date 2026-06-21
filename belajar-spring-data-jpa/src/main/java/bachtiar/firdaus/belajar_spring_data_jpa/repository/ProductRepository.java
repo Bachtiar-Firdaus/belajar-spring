@@ -45,9 +45,9 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 //    Page<Product> searchProduct(@Param("name") String name, Pageable pageable);
 //
 //    List<Product> searchProductUsingName(@Param("name") String name, Pageable pageable);
-//
-//    @Transactional
-//    int deleteByName(String name);
+
+    @Transactional
+    int deleteByName(String name);
 
     boolean existsByName(String name);
 

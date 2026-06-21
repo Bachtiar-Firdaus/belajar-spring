@@ -24,8 +24,8 @@ class ProductRepositoryTest {
     @Autowired
     private ProductRepository productRepository;
 
-//    @Autowired
-//    private TransactionOperations transactionOperations;
+    @Autowired
+    private TransactionOperations transactionOperations;
 
     @Test
     void createProducts() {
@@ -108,26 +108,26 @@ class ProductRepositoryTest {
         assertFalse(exists);
     }
 
-//    @Test
-//    void deleteOld() {
-//        transactionOperations.executeWithoutResult(transactionStatus -> { // trasaksi 1
-//            Category category = categoryRepository.findById(1L).orElse(null);
-//            assertNotNull(category);
-//
-//            Product product = new Product();
-//            product.setName("Samsung Galaxy S9");
-//            product.setPrice(10_000_000L);
-//            product.setCategory(category);
-//            productRepository.save(product); // trasaksi 1
-//
-//            int delete = productRepository.deleteByName("Samsung Galaxy S9"); // trasaksi 1
-//            assertEquals(1, delete);
-//
-//            delete = productRepository.deleteByName("Samsung Galaxy S9"); // trasaksi 1
-//            assertEquals(0, delete);
-//        });
-//    }
-//
+    @Test
+    void deleteOld() {
+        transactionOperations.executeWithoutResult(transactionStatus -> { // trasaksi 1
+            Category category = categoryRepository.findById(1L).orElse(null);
+            assertNotNull(category);
+
+            Product product = new Product();
+            product.setName("Samsung Galaxy S9");
+            product.setPrice(10_000_000L);
+            product.setCategory(category);
+            productRepository.save(product); // trasaksi 1
+
+            int delete = productRepository.deleteByName("Samsung Galaxy S9"); // trasaksi 1
+            assertEquals(1, delete);
+
+            delete = productRepository.deleteByName("Samsung Galaxy S9"); // trasaksi 1
+            assertEquals(0, delete);
+        });
+    }
+
 //    @Test
 //    void deleteNew() {
 //        Category category = categoryRepository.findById(1L).orElse(null);
