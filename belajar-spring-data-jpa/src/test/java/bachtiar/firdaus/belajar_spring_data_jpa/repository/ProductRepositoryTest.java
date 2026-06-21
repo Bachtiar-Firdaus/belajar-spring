@@ -146,14 +146,14 @@ class ProductRepositoryTest {
         assertEquals(0, delete);
     }
 
-//    @Test
-//    void namedQuery() {
-//        Pageable pageable = PageRequest.of(0, 1);
-//        List<Product> products = productRepository.searchProductUsingName("Apple iPhone 14 Pro Max", pageable);
-//        assertEquals(1, products.size());
-//        assertEquals("Apple iPhone 14 Pro Max", products.get(0).getName());
-//    }
-//
+    @Test
+    void namedQuery() {
+        Pageable pageable = PageRequest.of(0, 1);
+        List<Product> products = productRepository.searchProductUsingName("Apple iPhone 14 Pro Max", pageable);
+        assertEquals(1, products.size());
+        assertEquals("Apple iPhone 14 Pro Max", products.get(0).getName());
+    }
+
 //    @Test
 //    void searchProducts() {
 //        Pageable pageable = PageRequest.of(0, 1, Sort.by(Sort.Order.desc("id")));
