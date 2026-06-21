@@ -187,17 +187,17 @@ class ProductRepositoryTest {
         });
     }
 
-//    @Test
-//    void stream() {
-//        transactionOperations.executeWithoutResult(transactionStatus -> {
-//            Category category = categoryRepository.findById(1L).orElse(null);
-//            assertNotNull(category);
-//
-//            Stream<Product> stream = productRepository.streamAllByCategory(category);
-//            stream.forEach(product -> System.out.println(product.getId() + " : " + product.getName()));
-//        });
-//    }
-//
+    @Test
+    void stream() {
+        transactionOperations.executeWithoutResult(transactionStatus -> {
+            Category category = categoryRepository.findById(1L).orElse(null);
+            assertNotNull(category);
+
+            Stream<Product> stream = productRepository.streamAllByCategory(category);
+            stream.forEach(product -> System.out.println(product.getId() + " : " + product.getName()));
+        });
+    }
+
 //    @Test
 //    void slice() {
 //        Pageable firstPage = PageRequest.of(0, 1);

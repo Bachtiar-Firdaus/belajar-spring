@@ -27,8 +27,8 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 //    Optional<Product> findFirstByIdEquals(Long id);
 //
 //    Slice<Product> findAllByCategory(Category category, Pageable pageable);
-//
-//    Stream<Product> streamAllByCategory(Category category);
+
+    Stream<Product> streamAllByCategory(Category category);
 
     @Modifying
     @Query("delete from Product p where p.name = :name")
