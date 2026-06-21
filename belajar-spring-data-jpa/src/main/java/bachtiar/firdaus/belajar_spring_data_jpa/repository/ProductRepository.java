@@ -48,8 +48,8 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 //
 //    @Transactional
 //    int deleteByName(String name);
-//
-//    boolean existsByName(String name);
+
+    boolean existsByName(String name);
 
     Long countByCategory_Name(String name);
 
