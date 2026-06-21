@@ -22,9 +22,9 @@ import java.util.stream.Stream;
 public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
 //    <T> List<T> findAllByNameLike(String name, Class<T> tClass);
-//
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
-//    Optional<Product> findFirstByIdEquals(Long id);
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    Optional<Product> findFirstByIdEquals(Long id);
 
     Slice<Product> findAllByCategory(Category category, Pageable pageable);
 
