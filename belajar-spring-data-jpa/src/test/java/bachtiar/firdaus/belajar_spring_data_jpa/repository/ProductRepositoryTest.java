@@ -2,6 +2,8 @@ package bachtiar.firdaus.belajar_spring_data_jpa.repository;
 
 import bachtiar.firdaus.belajar_spring_data_jpa.entity.Category;
 import bachtiar.firdaus.belajar_spring_data_jpa.entity.Product;
+import bachtiar.firdaus.belajar_spring_data_jpa.model.ProductPrice;
+import bachtiar.firdaus.belajar_spring_data_jpa.model.SimpleProduct;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -254,12 +256,12 @@ class ProductRepositoryTest {
         assertEquals(2, products.size());
     }
 
-//    @Test
-//    void projection() {
-//        List<SimpleProduct> simpleProducts = productRepository.findAllByNameLike("%Apple%", SimpleProduct.class);
-//        assertEquals(2, simpleProducts.size());
-//
-//        List<ProductPrice> productPrices = productRepository.findAllByNameLike("%Apple%", ProductPrice.class);
-//        assertEquals(2, productPrices.size());
-//    }
+    @Test
+    void projection() {
+        List<SimpleProduct> simpleProducts = productRepository.findAllByNameLike("%Apple%", SimpleProduct.class);
+        assertEquals(2, simpleProducts.size());
+
+        List<ProductPrice> productPrices = productRepository.findAllByNameLike("%Apple%", ProductPrice.class);
+        assertEquals(2, productPrices.size());
+    }
 }
