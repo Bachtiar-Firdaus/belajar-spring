@@ -66,27 +66,27 @@ class ProductRepositoryTest {
         assertEquals("Apple iPhone 14 Pro Max", products.get(1).getName());
     }
 
-//    @Test
-//    void pageable() {
-//        // page 0
-//        Pageable pageable = PageRequest.of(0, 1, Sort.by(Sort.Order.desc("id")));
-//        Page<Product> products = productRepository.findAllByCategory_Name("GADGET MURAH", pageable);
-//        assertEquals(1, products.getContent().size());
-//        assertEquals(0, products.getNumber());
-//        assertEquals(2, products.getTotalElements());
-//        assertEquals(2, products.getTotalPages());
-//        assertEquals("Apple iPhone 13 Pro Max", products.getContent().get(0).getName());
-//
-//        // page 1
-//        pageable = PageRequest.of(1, 1, Sort.by(Sort.Order.desc("id")));
-//        products = productRepository.findAllByCategory_Name("GADGET MURAH", pageable);
-//        assertEquals(1, products.getContent().size());
-//        assertEquals(1, products.getNumber());
-//        assertEquals(2, products.getTotalElements());
-//        assertEquals(2, products.getTotalPages());
-//        assertEquals("Apple iPhone 14 Pro Max", products.getContent().get(0).getName());
-//    }
-//
+    @Test
+    void pageable() {
+        // page 0
+        Pageable pageable = PageRequest.of(0, 1, Sort.by(Sort.Order.desc("id")));
+        Page<Product> products = productRepository.findAllByCategory_Name("GADGET MURAH", pageable);
+        assertEquals(1, products.getContent().size());
+        assertEquals(0, products.getNumber());
+        assertEquals(2, products.getTotalElements());
+        assertEquals(2, products.getTotalPages());
+        assertEquals("Apple iPhone 13 Pro Max", products.getContent().get(0).getName());
+
+        // page 1
+        pageable = PageRequest.of(1, 1, Sort.by(Sort.Order.desc("id")));
+        products = productRepository.findAllByCategory_Name("GADGET MURAH", pageable);
+        assertEquals(1, products.getContent().size());
+        assertEquals(1, products.getNumber());
+        assertEquals(2, products.getTotalElements());
+        assertEquals(2, products.getTotalPages());
+        assertEquals("Apple iPhone 14 Pro Max", products.getContent().get(0).getName());
+    }
+
 //    @Test
 //    void count() {
 //        Long count = productRepository.count();
