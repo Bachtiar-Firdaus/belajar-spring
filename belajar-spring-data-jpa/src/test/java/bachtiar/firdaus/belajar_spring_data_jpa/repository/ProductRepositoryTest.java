@@ -198,21 +198,21 @@ class ProductRepositoryTest {
         });
     }
 
-//    @Test
-//    void slice() {
-//        Pageable firstPage = PageRequest.of(0, 1);
-//
-//        Category category = categoryRepository.findById(1L).orElse(null);
-//        assertNotNull(category);
-//
-//        Slice<Product> slice = productRepository.findAllByCategory(category, firstPage);
-//        // tampilkan konten product
-//        while (slice.hasNext()) {
-//            slice = productRepository.findAllByCategory(category, slice.nextPageable());
-//            // tampilkan konten product
-//        }
-//    }
-//
+    @Test
+    void slice() {
+        Pageable firstPage = PageRequest.of(0, 1);
+
+        Category category = categoryRepository.findById(1L).orElse(null);
+        assertNotNull(category);
+
+        Slice<Product> slice = productRepository.findAllByCategory(category, firstPage);
+        // tampilkan konten product
+        while (slice.hasNext()) {
+            slice = productRepository.findAllByCategory(category, slice.nextPageable());
+            // tampilkan konten product
+        }
+    }
+
 //    @Test
 //    void lock1() {
 //        transactionOperations.executeWithoutResult(transactionStatus -> {
