@@ -239,21 +239,21 @@ class ProductRepositoryTest {
         });
     }
 
-//    @Test
-//    void specification() {
-//        Specification<Product> specification= (root, criteriaQuery, criteriaBuilder) -> {
-//            return criteriaQuery.where(
-//                    criteriaBuilder.or(
-//                            criteriaBuilder.equal(root.get("name"), "Apple iPhone 14 Pro Max"),
-//                            criteriaBuilder.equal(root.get("name"), "Apple iPhone 13 Pro Max")
-//                    )
-//            ).getRestriction();
-//        };
-//
-//        List<Product> products = productRepository.findAll(specification);
-//        assertEquals(2, products.size());
-//    }
-//
+    @Test
+    void specification() {
+        Specification<Product> specification= (root, criteriaQuery, criteriaBuilder) -> {
+            return criteriaQuery.where(
+                    criteriaBuilder.or(
+                            criteriaBuilder.equal(root.get("name"), "Apple iPhone 14 Pro Max"),
+                            criteriaBuilder.equal(root.get("name"), "Apple iPhone 13 Pro Max")
+                    )
+            ).getRestriction();
+        };
+
+        List<Product> products = productRepository.findAll(specification);
+        assertEquals(2, products.size());
+    }
+
 //    @Test
 //    void projection() {
 //        List<SimpleProduct> simpleProducts = productRepository.findAllByNameLike("%Apple%", SimpleProduct.class);
