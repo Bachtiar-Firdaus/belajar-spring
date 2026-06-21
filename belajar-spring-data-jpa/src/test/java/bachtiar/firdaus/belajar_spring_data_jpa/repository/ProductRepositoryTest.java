@@ -128,24 +128,24 @@ class ProductRepositoryTest {
         });
     }
 
-//    @Test
-//    void deleteNew() {
-//        Category category = categoryRepository.findById(1L).orElse(null);
-//        assertNotNull(category);
-//
-//        Product product = new Product();
-//        product.setName("Samsung Galaxy S9");
-//        product.setPrice(10_000_000L);
-//        product.setCategory(category);
-//        productRepository.save(product); // trasaksi 1
-//
-//        int delete = productRepository.deleteByName("Samsung Galaxy S9"); // transaksi 2
-//        assertEquals(1, delete);
-//
-//        delete = productRepository.deleteByName("Samsung Galaxy S9"); // transaksi 3
-//        assertEquals(0, delete);
-//    }
-//
+    @Test
+    void deleteNew() {
+        Category category = categoryRepository.findById(1L).orElse(null);
+        assertNotNull(category);
+
+        Product product = new Product();
+        product.setName("Samsung Galaxy S9");
+        product.setPrice(10_000_000L);
+        product.setCategory(category);
+        productRepository.save(product); // trasaksi 1
+
+        int delete = productRepository.deleteByName("Samsung Galaxy S9"); // transaksi 2
+        assertEquals(1, delete);
+
+        delete = productRepository.deleteByName("Samsung Galaxy S9"); // transaksi 3
+        assertEquals(0, delete);
+    }
+
 //    @Test
 //    void namedQuery() {
 //        Pageable pageable = PageRequest.of(0, 1);
