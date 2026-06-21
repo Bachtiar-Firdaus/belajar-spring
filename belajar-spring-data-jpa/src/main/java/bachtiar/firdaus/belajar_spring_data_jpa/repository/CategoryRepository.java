@@ -10,10 +10,10 @@ import java.util.Optional;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
-//    // where name = ?
-//    Optional<Category> findFirstByNameEquals(String name);
-//
-//    // where name like ?
-//    List<Category> findAllByNameLike(String name);
+    // where name = ?
+    Optional<Category> findFirstByNameEquals(String name);
+
+    // where name like ?
+    List<Category> findAllByNameLike(String name);
 
 }

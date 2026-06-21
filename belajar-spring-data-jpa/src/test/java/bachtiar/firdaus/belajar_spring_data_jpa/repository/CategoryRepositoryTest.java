@@ -43,17 +43,17 @@ class CategoryRepositoryTest {
         assertEquals("GADGET MURAH", category.getName());
     }
 
-//    @Test
-//    void queryMethod() {
-//        Category category = categoryRepository.findFirstByNameEquals("GADGET MURAH").orElse(null);
-//        assertNotNull(category);
-//        assertEquals("GADGET MURAH", category.getName());
-//
-//        List<Category> categories = categoryRepository.findAllByNameLike("%GADGET%");
-//        assertEquals(1, categories.size());
-//        assertEquals("GADGET MURAH", categories.get(0).getName());
-//    }
-//
+    @Test
+    void queryMethod() {
+        Category category = categoryRepository.findFirstByNameEquals("GADGET MURAH").orElse(null);
+        assertNotNull(category);
+        assertEquals("GADGET MURAH", category.getName());
+
+        List<Category> categories = categoryRepository.findAllByNameLike("%GADGET%");
+        assertEquals(1, categories.size());
+        assertEquals("GADGET MURAH", categories.get(0).getName());
+    }
+
 //    @Test
 //    void audit() {
 //        Category category = new Category();
