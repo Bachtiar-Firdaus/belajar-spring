@@ -31,11 +31,11 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
-//    @CreatedDate
-//    @Column(name = "created_date")
-//    private Instant createdDate;
-//
-//    @LastModifiedDate
-//    @Column(name = "last_modified_date")
-//    private Instant lastModifiedDate;
+    @CreatedDate
+    @Column(name = "created_date")
+    private Instant createdDate;
+
+    @LastModifiedDate
+    @Column(name = "last_modified_date")
+    private Instant lastModifiedDate;
 }
