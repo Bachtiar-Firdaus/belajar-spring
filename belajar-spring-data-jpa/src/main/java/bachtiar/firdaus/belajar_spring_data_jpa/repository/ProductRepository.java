@@ -50,8 +50,8 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 //    int deleteByName(String name);
 //
 //    boolean existsByName(String name);
-//
-//    Long countByCategory_Name(String name);
+
+    Long countByCategory_Name(String name);
 
     List<Product> findAllByCategory_Name(String name);
 
