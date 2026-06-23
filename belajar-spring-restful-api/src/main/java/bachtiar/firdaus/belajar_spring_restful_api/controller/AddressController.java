@@ -69,13 +69,13 @@ public class AddressController {
         return WebResponse.<String>builder().data("OK").build();
     }
 
-//    @GetMapping(
-//            path = "/api/contacts/{contactId}/addresses",
-//            produces = MediaType.APPLICATION_JSON_VALUE
-//    )
-//    public WebResponse<List<AddressResponse>> list(User user,
-//                                                   @PathVariable("contactId") String contactId) {
-//        List<AddressResponse> addressResponses = addressService.list(user, contactId);
-//        return WebResponse.<List<AddressResponse>>builder().data(addressResponses).build();
-//    }
+    @GetMapping(
+            path = "/api/contacts/{contactId}/addresses",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<List<AddressResponse>> list(User user,
+                                                   @PathVariable("contactId") String contactId) {
+        List<AddressResponse> addressResponses = addressService.list(user, contactId);
+        return WebResponse.<List<AddressResponse>>builder().data(addressResponses).build();
+    }
 }
