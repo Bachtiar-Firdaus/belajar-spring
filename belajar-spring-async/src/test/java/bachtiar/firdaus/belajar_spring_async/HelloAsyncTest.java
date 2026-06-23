@@ -27,11 +27,11 @@ class HelloAsyncTest {
         Thread.sleep(Duration.ofSeconds(10));
     }
 
-//    @Test
-//    void helloName() throws ExecutionException, InterruptedException {
-//        Future<String> future = helloAsync.hello("Eko");
-//        log.info("after call hello(Eko)");
-//        String response = future.get();
-//        log.info(response);
-//    }
+    @Test
+    void helloName() throws ExecutionException, InterruptedException {
+        Future<String> future = helloAsync.hello("Eko");
+        log.info("after call hello(Eko)");
+        String response = future.get();
+        log.info(response);
+    }
 }
