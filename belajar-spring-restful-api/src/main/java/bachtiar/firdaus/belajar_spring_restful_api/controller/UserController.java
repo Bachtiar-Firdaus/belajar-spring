@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_restful_api.controller;
 
 import bachtiar.firdaus.belajar_spring_restful_api.entity.User;
 import bachtiar.firdaus.belajar_spring_restful_api.model.RegisterUserRequest;
+import bachtiar.firdaus.belajar_spring_restful_api.model.UserResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.model.WebResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,15 +25,15 @@ public class UserController {
         return WebResponse.<String>builder().data("OK").build();
     }
 
-//    @GetMapping(
-//            path = "/api/users/current",
-//            produces = MediaType.APPLICATION_JSON_VALUE
-//    )
-//    public WebResponse<UserResponse> get(User user) {
-//        UserResponse userResponse = userService.get(user);
-//        return WebResponse.<UserResponse>builder().data(userResponse).build();
-//    }
-//
+    @GetMapping(
+            path = "/api/users/current",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<UserResponse> get(User user) {
+        UserResponse userResponse = userService.get(user);
+        return WebResponse.<UserResponse>builder().data(userResponse).build();
+    }
+
 //    @PatchMapping(
 //            path = "/api/users/current",
 //            consumes = MediaType.APPLICATION_JSON_VALUE,

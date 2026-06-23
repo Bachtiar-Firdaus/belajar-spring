@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_restful_api.service;
 
 import bachtiar.firdaus.belajar_spring_restful_api.entity.User;
 import bachtiar.firdaus.belajar_spring_restful_api.model.RegisterUserRequest;
+import bachtiar.firdaus.belajar_spring_restful_api.model.UserResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.repository.UserRepository;
 import bachtiar.firdaus.belajar_spring_restful_api.security.BCrypt;
 import jakarta.validation.ConstraintViolation;
@@ -44,13 +45,13 @@ public class UserService {
         userRepository.save(user);
     }
 
-//    public UserResponse get(User user) {
-//        return UserResponse.builder()
-//                .username(user.getUsername())
-//                .name(user.getName())
-//                .build();
-//    }
-//
+    public UserResponse get(User user) {
+        return UserResponse.builder()
+                .username(user.getUsername())
+                .name(user.getName())
+                .build();
+    }
+
 //    @Transactional
 //    public UserResponse update(User user, UpdateUserRequest request) {
 //        validationService.validate(request);
