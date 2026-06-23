@@ -29,12 +29,12 @@ public class AuthController {
         return WebResponse.<TokenResponse>builder().data(tokenResponse).build();
     }
 
-//    @DeleteMapping(
-//            path = "/api/auth/logout",
-//            produces = MediaType.APPLICATION_JSON_VALUE
-//    )
-//    public WebResponse<String> logout(User user) {
-//        authService.logout(user);
-//        return WebResponse.<String>builder().data("OK").build();
-//    }
+    @DeleteMapping(
+            path = "/api/auth/logout",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<String> logout(User user) {
+        authService.logout(user);
+        return WebResponse.<String>builder().data("OK").build();
+    }
 }
