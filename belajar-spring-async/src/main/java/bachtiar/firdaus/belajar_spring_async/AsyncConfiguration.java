@@ -10,10 +10,10 @@ import java.util.concurrent.ScheduledExecutorService;
 @Configuration
 public class AsyncConfiguration {
 
-//    @Bean
-//    public ScheduledExecutorService taskScheduler(){
-//        return Executors.newScheduledThreadPool(10);
-//    }
+    @Bean
+    public ScheduledExecutorService taskScheduler(){
+        return Executors.newScheduledThreadPool(10);
+    }
 
     @Bean
     public Executor taskExecutor(){
