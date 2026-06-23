@@ -1,5 +1,6 @@
 package bachtiar.firdaus.belajar_spring_restful_api.service;
 
+import bachtiar.firdaus.belajar_spring_restful_api.model.SearchContactRequest;
 import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateContactRequest;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,33 +93,33 @@ public class ContactService {
         contactRepository.delete(contact);
     }
 
-//    @Transactional(readOnly = true)
-//    public Page<ContactResponse> search(User user, SearchContactRequest request) {
-//        Specification<Contact> specification = (root, query, builder) -> {
-//            List<Predicate> predicates = new ArrayList<>();
-//            predicates.add(builder.equal(root.get("user"), user));
-//            if (Objects.nonNull(request.getName())) {
-//                predicates.add(builder.or(
-//                        builder.like(root.get("firstName"), "%" + request.getName() + "%"),
-//                        builder.like(root.get("lastName"), "%" + request.getName() + "%")
-//                ));
-//            }
-//            if (Objects.nonNull(request.getEmail())) {
-//                predicates.add(builder.like(root.get("email"), "%" + request.getEmail() + "%"));
-//            }
-//            if (Objects.nonNull(request.getPhone())) {
-//                predicates.add(builder.like(root.get("phone"), "%" + request.getPhone() + "%"));
-//            }
-//
-//            return query.where(predicates.toArray(new Predicate[]{})).getRestriction();
-//        };
-//
-//        Pageable pageable = PageRequest.of(request.getPage(), request.getSize());
-//        Page<Contact> contacts = contactRepository.findAll(specification, pageable);
-//        List<ContactResponse> contactResponses = contacts.getContent().stream()
-//                .map(this::toContactResponse)
-//                .toList();
-//
-//        return new PageImpl<>(contactResponses, pageable, contacts.getTotalElements());
-//    }
+    @Transactional(readOnly = true)
+    public Page<ContactResponse> search(User user, SearchContactRequest request) {
+        Specification<Contact> specification = (root, query, builder) -> {
+            List<Predicate> predicates = new ArrayList<>();
+            predicates.add(builder.equal(root.get("user"), user));
+            if (Objects.nonNull(request.getName())) {
+                predicates.add(builder.or(
+                        builder.like(root.get("firstName"), "%" + request.getName() + "%"),
+                        builder.like(root.get("lastName"), "%" + request.getName() + "%")
+                ));
+            }
+            if (Objects.nonNull(request.getEmail())) {
+                predicates.add(builder.like(root.get("email"), "%" + request.getEmail() + "%"));
+            }
+            if (Objects.nonNull(request.getPhone())) {
+                predicates.add(builder.like(root.get("phone"), "%" + request.getPhone() + "%"));
+            }
+
+            return query.where(predicates.toArray(new Predicate[]{})).getRestriction();
+        };
+
+        Pageable pageable = PageRequest.of(request.getPage(), request.getSize());
+        Page<Contact> contacts = contactRepository.findAll(specification, pageable);
+        List<ContactResponse> contactResponses = contacts.getContent().stream()
+                .map(this::toContactResponse)
+                .toList();
+
+        return new PageImpl<>(contactResponses, pageable, contacts.getTotalElements());
+    }
 }
