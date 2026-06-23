@@ -1,5 +1,6 @@
 package bachtiar.firdaus.belajar_spring_restful_api.controller;
 
+import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateAddressRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -41,22 +42,22 @@ public class AddressController {
         return WebResponse.<AddressResponse>builder().data(addressResponse).build();
     }
 
-//    @PutMapping(
-//            path = "/api/contacts/{contactId}/addresses/{addressId}",
-//            produces = MediaType.APPLICATION_JSON_VALUE,
-//            consumes = MediaType.APPLICATION_JSON_VALUE
-//    )
-//    public WebResponse<AddressResponse> update(User user,
-//                                               @RequestBody UpdateAddressRequest request,
-//                                               @PathVariable("contactId") String contactId,
-//                                               @PathVariable("addressId") String addressId) {
-//        request.setContactId(contactId);
-//        request.setAddressId(addressId);
-//
-//        AddressResponse addressResponse = addressService.update(user, request);
-//        return WebResponse.<AddressResponse>builder().data(addressResponse).build();
-//    }
-//
+    @PutMapping(
+            path = "/api/contacts/{contactId}/addresses/{addressId}",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<AddressResponse> update(User user,
+                                               @RequestBody UpdateAddressRequest request,
+                                               @PathVariable("contactId") String contactId,
+                                               @PathVariable("addressId") String addressId) {
+        request.setContactId(contactId);
+        request.setAddressId(addressId);
+
+        AddressResponse addressResponse = addressService.update(user, request);
+        return WebResponse.<AddressResponse>builder().data(addressResponse).build();
+    }
+
 //    @DeleteMapping(
 //            path = "/api/contacts/{contactId}/addresses/{addressId}",
 //            produces = MediaType.APPLICATION_JSON_VALUE
