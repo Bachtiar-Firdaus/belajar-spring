@@ -1,6 +1,7 @@
 package bachtiar.firdaus.belajar_spring_restful_api.controller;
 
 
+import bachtiar.firdaus.belajar_spring_restful_api.repository.AddressRepository;
 import bachtiar.firdaus.belajar_spring_restful_api.repository.ContactRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,9 +35,9 @@ class AuthControllerTest {
     @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
-//    private AddressRepository addressRepository;
-//
+    @Autowired
+    private AddressRepository addressRepository;
+
     @Autowired
     private ContactRepository contactRepository;
 
@@ -45,7 +46,7 @@ class AuthControllerTest {
 
     @BeforeEach
     void setUp() {
-//        addressRepository.deleteAll();
+        addressRepository.deleteAll();
         contactRepository.deleteAll();
         userRepository.deleteAll();
     }

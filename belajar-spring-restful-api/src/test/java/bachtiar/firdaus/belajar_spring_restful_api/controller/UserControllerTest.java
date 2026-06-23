@@ -5,6 +5,7 @@ import bachtiar.firdaus.belajar_spring_restful_api.model.RegisterUserRequest;
 import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateUserRequest;
 import bachtiar.firdaus.belajar_spring_restful_api.model.UserResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.model.WebResponse;
+import bachtiar.firdaus.belajar_spring_restful_api.repository.AddressRepository;
 import bachtiar.firdaus.belajar_spring_restful_api.repository.ContactRepository;
 import bachtiar.firdaus.belajar_spring_restful_api.repository.UserRepository;
 import bachtiar.firdaus.belajar_spring_restful_api.security.BCrypt;
@@ -34,8 +35,8 @@ class UserControllerTest {
     @Autowired
     private ContactRepository contactRepository;
 
-//    @Autowired
-//    private AddressRepository addressRepository;
+    @Autowired
+    private AddressRepository addressRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -45,7 +46,7 @@ class UserControllerTest {
 
     @BeforeEach
     void setUp() {
-//        addressRepository.deleteAll();
+        addressRepository.deleteAll();
         contactRepository.deleteAll();
         userRepository.deleteAll();
     }

@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_restful_api.controller;
 
 
 import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateContactRequest;
+import bachtiar.firdaus.belajar_spring_restful_api.repository.AddressRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,12 +48,12 @@ class ContactControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-//    @Autowired
-//    private AddressRepository addressRepository;
+    @Autowired
+    private AddressRepository addressRepository;
 
     @BeforeEach
     void setUp() {
-//        addressRepository.deleteAll();
+        addressRepository.deleteAll();
         contactRepository.deleteAll();
         userRepository.deleteAll();
 
