@@ -59,14 +59,14 @@ public class ContactService {
                 .build();
     }
 
-//    @Transactional(readOnly = true)
-//    public ContactResponse get(User user, String id) {
-//        Contact contact = contactRepository.findFirstByUserAndId(user, id)
-//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Contact not found"));
-//
-//        return toContactResponse(contact);
-//    }
-//
+    @Transactional(readOnly = true)
+    public ContactResponse get(User user, String id) {
+        Contact contact = contactRepository.findFirstByUserAndId(user, id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Contact not found"));
+
+        return toContactResponse(contact);
+    }
+
 //    @Transactional
 //    public ContactResponse update(User user, UpdateContactRequest request) {
 //        validationService.validate(request);
