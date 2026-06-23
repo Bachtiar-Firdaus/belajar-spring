@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_restful_api.service;
 
 import bachtiar.firdaus.belajar_spring_restful_api.entity.User;
 import bachtiar.firdaus.belajar_spring_restful_api.model.RegisterUserRequest;
+import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateUserRequest;
 import bachtiar.firdaus.belajar_spring_restful_api.model.UserResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.repository.UserRepository;
 import bachtiar.firdaus.belajar_spring_restful_api.security.BCrypt;
@@ -52,27 +53,27 @@ public class UserService {
                 .build();
     }
 
-//    @Transactional
-//    public UserResponse update(User user, UpdateUserRequest request) {
-//        validationService.validate(request);
-//
-//        log.info("REQUEST : {}", request);
-//
-//        if (Objects.nonNull(request.getName())) {
-//            user.setName(request.getName());
-//        }
-//
-//        if (Objects.nonNull(request.getPassword())) {
-//            user.setPassword(BCrypt.hashpw(request.getPassword(), BCrypt.gensalt()));
-//        }
-//
-//        userRepository.save(user);
-//
-//        log.info("USER : {}", user.getName());
-//
-//        return UserResponse.builder()
-//                .name(user.getName())
-//                .username(user.getUsername())
-//                .build();
-//    }
+    @Transactional
+    public UserResponse update(User user, UpdateUserRequest request) {
+        validationService.validate(request);
+
+        log.info("REQUEST : {}", request);
+
+        if (Objects.nonNull(request.getName())) {
+            user.setName(request.getName());
+        }
+
+        if (Objects.nonNull(request.getPassword())) {
+            user.setPassword(BCrypt.hashpw(request.getPassword(), BCrypt.gensalt()));
+        }
+
+        userRepository.save(user);
+
+        log.info("USER : {}", user.getName());
+
+        return UserResponse.builder()
+                .name(user.getName())
+                .username(user.getUsername())
+                .build();
+    }
 }

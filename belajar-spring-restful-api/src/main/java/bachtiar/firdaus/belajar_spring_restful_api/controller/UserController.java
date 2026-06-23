@@ -2,6 +2,7 @@ package bachtiar.firdaus.belajar_spring_restful_api.controller;
 
 import bachtiar.firdaus.belajar_spring_restful_api.entity.User;
 import bachtiar.firdaus.belajar_spring_restful_api.model.RegisterUserRequest;
+import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateUserRequest;
 import bachtiar.firdaus.belajar_spring_restful_api.model.UserResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.model.WebResponse;
 import bachtiar.firdaus.belajar_spring_restful_api.service.UserService;
@@ -34,13 +35,13 @@ public class UserController {
         return WebResponse.<UserResponse>builder().data(userResponse).build();
     }
 
-//    @PatchMapping(
-//            path = "/api/users/current",
-//            consumes = MediaType.APPLICATION_JSON_VALUE,
-//            produces = MediaType.APPLICATION_JSON_VALUE
-//    )
-//    public WebResponse<UserResponse> update(User user, @RequestBody UpdateUserRequest request) {
-//        UserResponse userResponse = userService.update(user, request);
-//        return WebResponse.<UserResponse>builder().data(userResponse).build();
-//    }
+    @PatchMapping(
+            path = "/api/users/current",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<UserResponse> update(User user, @RequestBody UpdateUserRequest request) {
+        UserResponse userResponse = userService.update(user, request);
+        return WebResponse.<UserResponse>builder().data(userResponse).build();
+    }
 }
