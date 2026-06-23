@@ -1,5 +1,6 @@
 package bachtiar.firdaus.belajar_spring_restful_api.service;
 
+import bachtiar.firdaus.belajar_spring_restful_api.model.UpdateContactRequest;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -67,22 +68,22 @@ public class ContactService {
         return toContactResponse(contact);
     }
 
-//    @Transactional
-//    public ContactResponse update(User user, UpdateContactRequest request) {
-//        validationService.validate(request);
-//
-//        Contact contact = contactRepository.findFirstByUserAndId(user, request.getId())
-//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Contact not found"));
-//
-//        contact.setFirstName(request.getFirstName());
-//        contact.setLastName(request.getLastName());
-//        contact.setEmail(request.getEmail());
-//        contact.setPhone(request.getPhone());
-//        contactRepository.save(contact);
-//
-//        return toContactResponse(contact);
-//    }
-//
+    @Transactional
+    public ContactResponse update(User user, UpdateContactRequest request) {
+        validationService.validate(request);
+
+        Contact contact = contactRepository.findFirstByUserAndId(user, request.getId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Contact not found"));
+
+        contact.setFirstName(request.getFirstName());
+        contact.setLastName(request.getLastName());
+        contact.setEmail(request.getEmail());
+        contact.setPhone(request.getPhone());
+        contactRepository.save(contact);
+
+        return toContactResponse(contact);
+    }
+
 //    @Transactional
 //    public void delete(User user, String contactId) {
 //        Contact contact = contactRepository.findFirstByUserAndId(user, contactId)
