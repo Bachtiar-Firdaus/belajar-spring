@@ -156,25 +156,25 @@ class RedisTest {
         assertEquals(6L, operations.size("traffics"));
     }
 
-//    @Test
-//    void transaction() {
-//        redisTemplate.execute(new SessionCallback<Object>() {
-//            @Override
-//            public Object execute(RedisOperations operations) throws DataAccessException {
-//                operations.multi();
-//
-//                operations.opsForValue().set("test1", "Eko", Duration.ofSeconds(2));
-//                operations.opsForValue().set("test2", "Budi", Duration.ofSeconds(2));
-//
-//                operations.exec();
-//                return null;
-//            }
-//        });
-//
-//        assertEquals("Eko", redisTemplate.opsForValue().get("test1"));
-//        assertEquals("Budi", redisTemplate.opsForValue().get("test2"));
-//    }
-//
+    @Test
+    void transaction() {
+        redisTemplate.execute(new SessionCallback<Object>() {
+            @Override
+            public Object execute(RedisOperations operations) throws DataAccessException {
+                operations.multi();
+
+                operations.opsForValue().set("test1", "Eko", Duration.ofSeconds(2));
+                operations.opsForValue().set("test2", "Budi", Duration.ofSeconds(2));
+
+                operations.exec();
+                return null;
+            }
+        });
+
+        assertEquals("Eko", redisTemplate.opsForValue().get("test1"));
+        assertEquals("Budi", redisTemplate.opsForValue().get("test2"));
+    }
+
 //    @Test
 //    void pipeline() {
 //        List<Object> statuses = redisTemplate.executePipelined(new SessionCallback<Object>() {
