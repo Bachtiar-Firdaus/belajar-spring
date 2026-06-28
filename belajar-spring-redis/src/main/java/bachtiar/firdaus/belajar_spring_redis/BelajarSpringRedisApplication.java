@@ -32,14 +32,14 @@ public class BelajarSpringRedisApplication {
 	@Autowired
 	private StringRedisTemplate redisTemplate;
 
-//	@Bean
-//	public RedisMessageListenerContainer messageListenerContainer(RedisConnectionFactory connectionFactory,
-//																  CustomerListener customerListener){
-//		var container = new RedisMessageListenerContainer();
-//		container.setConnectionFactory(connectionFactory);
-//		container.addMessageListener(customerListener, new ChannelTopic("customers"));
-//		return container;
-//	}
+	@Bean
+	public RedisMessageListenerContainer messageListenerContainer(RedisConnectionFactory connectionFactory,
+																  CustomerListener customerListener){
+		var container = new RedisMessageListenerContainer();
+		container.setConnectionFactory(connectionFactory);
+		container.addMessageListener(customerListener, new ChannelTopic("customers"));
+		return container;
+	}
 
 	@Bean
 	public Subscription orderSubscription(StreamMessageListenerContainer<String, ObjectRecord<String, Order>> orderContainer,
