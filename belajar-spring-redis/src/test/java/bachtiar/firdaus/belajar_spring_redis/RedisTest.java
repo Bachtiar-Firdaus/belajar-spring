@@ -193,38 +193,38 @@ class RedisTest {
         assertThat(statuses, not(hasItem(false)));
     }
 
-//    @Test
-//    void publishStream() {
-//        StreamOperations<String, Object, Object> operations = redisTemplate.opsForStream();
-//
-//        MapRecord<String, String, String> record = MapRecord.create("stream-1", Map.of(
-//                "name", "Budi Kurniawan",
-//                "address", "Indonesia"
-//        ));
-//
-//        for (int i = 0; i < 10; i++) {
-//            operations.add(record);
-//        }
-//    }
-//
-//    @Test
-//    void subscribeStream() {
-//        StreamOperations<String, Object, Object> operations = redisTemplate.opsForStream();
-//
-//        try {
-//            operations.createGroup("stream-1", "sample-group");
-//        } catch (RedisSystemException exception) {
-//            // group sudah ada
-//        }
-//
-//        List<MapRecord<String, Object, Object>> records = operations.read(Consumer.from("sample-group", "sample-1"),
-//                StreamOffset.create("stream-1", ReadOffset.lastConsumed()));
-//
-//        for (MapRecord<String, Object, Object> record : records) {
-//            System.out.println(record);
-//        }
-//    }
-//
+    @Test
+    void publishStream() {
+        StreamOperations<String, Object, Object> operations = redisTemplate.opsForStream();
+
+        MapRecord<String, String, String> record = MapRecord.create("stream-1", Map.of(
+                "name", "Budi Kurniawan",
+                "address", "Indonesia"
+        ));
+
+        for (int i = 0; i < 10; i++) {
+            operations.add(record);
+        }
+    }
+
+    @Test
+    void subscribeStream() {
+        StreamOperations<String, Object, Object> operations = redisTemplate.opsForStream();
+
+        try {
+            operations.createGroup("stream-1", "sample-group");
+        } catch (RedisSystemException exception) {
+            // group sudah ada
+        }
+
+        List<MapRecord<String, Object, Object>> records = operations.read(Consumer.from("sample-group", "sample-1"),
+                StreamOffset.create("stream-1", ReadOffset.lastConsumed()));
+
+        for (MapRecord<String, Object, Object> record : records) {
+            System.out.println(record);
+        }
+    }
+
 //    @Test
 //    void pubSub() {
 //        redisTemplate.getConnectionFactory().getConnection().subscribe(new MessageListener() {
