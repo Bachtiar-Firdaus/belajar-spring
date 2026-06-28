@@ -311,22 +311,22 @@ class RedisTest {
         assertEquals(product.getPrice().toString(), map.get("price"));
     }
 
-//    @Test
-//    void ttl() throws InterruptedException {
-//        Product product = Product.builder()
-//                .id("1")
-//                .name("Mie Ayam Goreng")
-//                .price(20_000L)
-//                .ttl(3L)
-//                .build();
-//        productRepository.save(product);
-//
-//        assertTrue(productRepository.findById("1").isPresent());
-//
-//        Thread.sleep(Duration.ofSeconds(5));
-//        assertFalse(productRepository.findById("1").isPresent());
-//    }
-//
+    @Test
+    void ttl() throws InterruptedException {
+        Product product = Product.builder()
+                .id("1")
+                .name("Mie Ayam Goreng")
+                .price(20_000L)
+                .ttl(3L)
+                .build();
+        productRepository.save(product);
+
+        assertTrue(productRepository.findById("1").isPresent());
+
+        Thread.sleep(Duration.ofSeconds(5));
+        assertFalse(productRepository.findById("1").isPresent());
+    }
+
 //    @Test
 //    void cache() {
 //        Cache cache = cacheManager.getCache("scores");

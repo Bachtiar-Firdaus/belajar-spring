@@ -26,6 +26,6 @@ public class Product implements Serializable {
     private Long price;
 
     @TimeToLive(unit = TimeUnit.SECONDS)
-    @Builder.Default // 🛠️ TAMBAHKAN INI agar Lombok Builder membaca nilai default -1L
+//    @Builder.Default // 🛠️ TAMBAHKAN INI agar Lombok Builder membaca nilai default -1L
     private Long ttl = -1L;
 }
