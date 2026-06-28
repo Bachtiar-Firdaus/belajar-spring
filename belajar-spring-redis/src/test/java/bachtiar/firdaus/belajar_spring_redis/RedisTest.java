@@ -175,24 +175,24 @@ class RedisTest {
         assertEquals("Budi", redisTemplate.opsForValue().get("test2"));
     }
 
-//    @Test
-//    void pipeline() {
-//        List<Object> statuses = redisTemplate.executePipelined(new SessionCallback<Object>() {
-//            @Override
-//            public Object execute(RedisOperations operations) throws DataAccessException {
-//                operations.opsForValue().set("test1", "Eko", Duration.ofSeconds(2));
-//                operations.opsForValue().set("test2", "Eko", Duration.ofSeconds(2));
-//                operations.opsForValue().set("test3", "Eko", Duration.ofSeconds(2));
-//                operations.opsForValue().set("test4", "Eko", Duration.ofSeconds(2));
-//                return null;
-//            }
-//        });
-//
-//        assertThat(statuses, hasSize(4));
-//        assertThat(statuses, hasItem(true));
-//        assertThat(statuses, not(hasItem(false)));
-//    }
-//
+    @Test
+    void pipeline() {
+        List<Object> statuses = redisTemplate.executePipelined(new SessionCallback<Object>() {
+            @Override
+            public Object execute(RedisOperations operations) throws DataAccessException {
+                operations.opsForValue().set("test1", "Eko", Duration.ofSeconds(2));
+                operations.opsForValue().set("test2", "Eko", Duration.ofSeconds(2));
+                operations.opsForValue().set("test3", "Eko", Duration.ofSeconds(2));
+                operations.opsForValue().set("test4", "Eko", Duration.ofSeconds(2));
+                return null;
+            }
+        });
+
+        assertThat(statuses, hasSize(4));
+        assertThat(statuses, hasItem(true));
+        assertThat(statuses, not(hasItem(false)));
+    }
+
 //    @Test
 //    void publishStream() {
 //        StreamOperations<String, Object, Object> operations = redisTemplate.opsForStream();
