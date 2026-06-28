@@ -38,8 +38,8 @@ class RedisTest {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-//    @Autowired
-//    private ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
     @Autowired
     private CacheManager cacheManager;
@@ -293,24 +293,24 @@ class RedisTest {
         assertThat(entries, hasEntry("address", "Indonesia"));
     }
 
-//    @Test
-//    void repository() {
-//        Product product = Product.builder()
-//                .id("1")
-//                .name("Mie Ayam Goreng")
-//                .price(20_000L)
-//                .build();
-//        productRepository.save(product);
-//
-//        Product product2 = productRepository.findById("1").get();
-//        assertEquals(product, product2);
-//
-//        Map<Object, Object> map = redisTemplate.opsForHash().entries("products:1");
-//        assertEquals(product.getId(), map.get("id"));
-//        assertEquals(product.getName(), map.get("name"));
-//        assertEquals(product.getPrice().toString(), map.get("price"));
-//    }
-//
+    @Test
+    void repository() {
+        Product product = Product.builder()
+                .id("1")
+                .name("Mie Ayam Goreng")
+                .price(20_000L)
+                .build();
+        productRepository.save(product);
+
+        Product product2 = productRepository.findById("1").get();
+        assertEquals(product, product2);
+
+        Map<Object, Object> map = redisTemplate.opsForHash().entries("products:1");
+        assertEquals(product.getId(), map.get("id"));
+        assertEquals(product.getName(), map.get("name"));
+        assertEquals(product.getPrice().toString(), map.get("price"));
+    }
+
 //    @Test
 //    void ttl() throws InterruptedException {
 //        Product product = Product.builder()
