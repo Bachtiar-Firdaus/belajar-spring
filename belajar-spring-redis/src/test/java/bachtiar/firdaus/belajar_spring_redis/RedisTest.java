@@ -73,22 +73,22 @@ class RedisTest {
         assertEquals("Khannedy", operations.leftPop("names"));
     }
 
-//    @Test
-//    void set() {
-//        SetOperations<String, String> operations = redisTemplate.opsForSet();
-//
-//        operations.add("students", "Eko");
-//        operations.add("students", "Eko");
-//        operations.add("students", "Kurniawan");
-//        operations.add("students", "Kurniawan");
-//        operations.add("students", "Khannedy");
-//        operations.add("students", "Khannedy");
-//
-//        Set<String> students = operations.members("students");
-//        assertEquals(3, students.size());
-//        assertThat(students, hasItems("Eko", "Kurniawan", "Khannedy"));
-//    }
-//
+    @Test
+    void set() {
+        SetOperations<String, String> operations = redisTemplate.opsForSet();
+
+        operations.add("students", "Eko");
+        operations.add("students", "Eko");
+        operations.add("students", "Kurniawan");
+        operations.add("students", "Kurniawan");
+        operations.add("students", "Khannedy");
+        operations.add("students", "Khannedy");
+
+        Set<String> students = operations.members("students");
+        assertEquals(3, students.size());
+        assertThat(students, hasItems("Eko", "Kurniawan", "Khannedy"));
+    }
+
 //    @Test
 //    void zSet() {
 //        ZSetOperations<String, String> operations = redisTemplate.opsForZSet();
