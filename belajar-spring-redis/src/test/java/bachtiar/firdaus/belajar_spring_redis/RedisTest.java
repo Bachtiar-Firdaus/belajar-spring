@@ -327,22 +327,22 @@ class RedisTest {
         assertFalse(productRepository.findById("1").isPresent());
     }
 
-//    @Test
-//    void cache() {
-//        Cache cache = cacheManager.getCache("scores");
-//        cache.put("Eko", 100);
-//        cache.put("Budi", 95);
-//
-//        assertEquals(100, cache.get("Eko", Integer.class));
-//        assertEquals(95, cache.get("Budi", Integer.class));
-//
-//        cache.evict("Eko");
-//        cache.evict("Budi");
-//
-//        assertNull(cache.get("Eko"));
-//        assertNull(cache.get("Budi"));
-//    }
-//
+    @Test
+    void cache() {
+        Cache cache = cacheManager.getCache("scores");
+        cache.put("Eko", 100);
+        cache.put("Budi", 95);
+
+        assertEquals(100, cache.get("Eko", Integer.class));
+        assertEquals(95, cache.get("Budi", Integer.class));
+
+        cache.evict("Eko");
+        cache.evict("Budi");
+
+        assertNull(cache.get("Eko"));
+        assertNull(cache.get("Budi"));
+    }
+
 //    @Autowired
 //    private ProductService productService;
 //
