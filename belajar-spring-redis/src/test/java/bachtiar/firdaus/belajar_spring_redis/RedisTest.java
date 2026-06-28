@@ -240,59 +240,59 @@ class RedisTest {
         }
     }
 
-//    @Test
-//    void redisList() {
-//        List<String> list = RedisList.create("names", redisTemplate);
-//        list.add("Eko");
-//        list.add("Kurniawan");
-//        list.add("Khannedy");
-//        assertThat(list, hasItems("Eko", "Kurniawan", "Khannedy"));
-//
-//        List<String> result = redisTemplate.opsForList().range("names", 0, -1);
-//        assertThat(result, hasItems("Eko", "Kurniawan", "Khannedy"));
-//    }
-//
-//    @Test
-//    void redisSet() {
-//        Set<String> set = RedisSet.create("traffic", redisTemplate);
-//        set.addAll(Set.of("eko", "kurniawan", "khannedy"));
-//        set.addAll(Set.of("eko", "budi", "rully"));
-//        set.addAll(Set.of("joko", "budi", "rully"));
-//        assertThat(set, hasItems("eko", "kurniawan", "budi", "rully", "joko"));
-//
-//        Set<String> members = redisTemplate.opsForSet().members("traffic");
-//        assertThat(members, hasItems("eko", "kurniawan", "budi", "rully", "joko"));
-//    }
-//
-//    @Test
-//    void redisZSet() {
-//        RedisZSet<String> set = RedisZSet.create("winner", redisTemplate);
-//        set.add("Eko", 100);
-//        set.add("Budi", 85);
-//        set.add("Joko", 90);
-//        assertThat(set, hasItems("Eko", "Budi", "Joko"));
-//
-//        Set<String> winner = redisTemplate.opsForZSet().range("winner", 0, -1);
-//        assertThat(winner, hasItems("Eko", "Budi", "Joko"));
-//
-//        assertEquals("Eko", set.popLast());
-//        assertEquals("Joko", set.popLast());
-//        assertEquals("Budi", set.popLast());
-//    }
-//
-//    @Test
-//    void redisMap() {
-//        Map<String, String> map = new DefaultRedisMap<>("user:1", redisTemplate);
-//        map.put("name", "Eko");
-//        map.put("address", "Indonesia");
-//        assertThat(map, hasEntry("name", "Eko"));
-//        assertThat(map, hasEntry("address", "Indonesia"));
-//
-//        Map<Object, Object> entries = redisTemplate.opsForHash().entries("user:1");
-//        assertThat(entries, hasEntry("name", "Eko"));
-//        assertThat(entries, hasEntry("address", "Indonesia"));
-//    }
-//
+    @Test
+    void redisList() {
+        List<String> list = RedisList.create("names", redisTemplate);
+        list.add("Eko");
+        list.add("Kurniawan");
+        list.add("Khannedy");
+        assertThat(list, hasItems("Eko", "Kurniawan", "Khannedy"));
+
+        List<String> result = redisTemplate.opsForList().range("names", 0, -1);
+        assertThat(result, hasItems("Eko", "Kurniawan", "Khannedy"));
+    }
+
+    @Test
+    void redisSet() {
+        Set<String> set = RedisSet.create("traffic", redisTemplate);
+        set.addAll(Set.of("eko", "kurniawan", "khannedy"));
+        set.addAll(Set.of("eko", "budi", "rully"));
+        set.addAll(Set.of("joko", "budi", "rully"));
+        assertThat(set, hasItems("eko", "kurniawan", "budi", "rully", "joko"));
+
+        Set<String> members = redisTemplate.opsForSet().members("traffic");
+        assertThat(members, hasItems("eko", "kurniawan", "budi", "rully", "joko"));
+    }
+
+    @Test
+    void redisZSet() {
+        RedisZSet<String> set = RedisZSet.create("winner", redisTemplate);
+        set.add("Eko", 100);
+        set.add("Budi", 85);
+        set.add("Joko", 90);
+        assertThat(set, hasItems("Eko", "Budi", "Joko"));
+
+        Set<String> winner = redisTemplate.opsForZSet().range("winner", 0, -1);
+        assertThat(winner, hasItems("Eko", "Budi", "Joko"));
+
+        assertEquals("Eko", set.popLast());
+        assertEquals("Joko", set.popLast());
+        assertEquals("Budi", set.popLast());
+    }
+
+    @Test
+    void redisMap() {
+        Map<String, String> map = new DefaultRedisMap<>("user:1", redisTemplate);
+        map.put("name", "Eko");
+        map.put("address", "Indonesia");
+        assertThat(map, hasEntry("name", "Eko"));
+        assertThat(map, hasEntry("address", "Indonesia"));
+
+        Map<Object, Object> entries = redisTemplate.opsForHash().entries("user:1");
+        assertThat(entries, hasEntry("name", "Eko"));
+        assertThat(entries, hasEntry("address", "Indonesia"));
+    }
+
 //    @Test
 //    void repository() {
 //        Product product = Product.builder()
