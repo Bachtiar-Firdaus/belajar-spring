@@ -225,21 +225,21 @@ class RedisTest {
         }
     }
 
-//    @Test
-//    void pubSub() {
-//        redisTemplate.getConnectionFactory().getConnection().subscribe(new MessageListener() {
-//            @Override
-//            public void onMessage(Message message, byte[] pattern) {
-//                String event = new String(message.getBody());
-//                System.out.println("Receive message : " + event);
-//            }
-//        }, "my-channel".getBytes());
-//
-//        for (int i = 0; i < 10; i++) {
-//            redisTemplate.convertAndSend("my-channel", "Hello World : " + i);
-//        }
-//    }
-//
+    @Test
+    void pubSub() {
+        redisTemplate.getConnectionFactory().getConnection().subscribe(new MessageListener() {
+            @Override
+            public void onMessage(Message message, byte[] pattern) {
+                String event = new String(message.getBody());
+                System.out.println("Receive message : " + event);
+            }
+        }, "my-channel".getBytes());
+
+        for (int i = 0; i < 10; i++) {
+            redisTemplate.convertAndSend("my-channel", "Hello World : " + i);
+        }
+    }
+
 //    @Test
 //    void redisList() {
 //        List<String> list = RedisList.create("names", redisTemplate);
