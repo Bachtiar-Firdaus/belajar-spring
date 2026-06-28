@@ -89,19 +89,19 @@ class RedisTest {
         assertThat(students, hasItems("Eko", "Kurniawan", "Khannedy"));
     }
 
-//    @Test
-//    void zSet() {
-//        ZSetOperations<String, String> operations = redisTemplate.opsForZSet();
-//
-//        operations.add("score", "Eko", 100);
-//        operations.add("score", "Budi", 85);
-//        operations.add("score", "Joko", 90);
-//
-//        assertEquals("Eko", operations.popMax("score").getValue());
-//        assertEquals("Joko", operations.popMax("score").getValue());
-//        assertEquals("Budi", operations.popMax("score").getValue());
-//    }
-//
+    @Test
+    void zSet() {
+        ZSetOperations<String, String> operations = redisTemplate.opsForZSet();
+
+        operations.add("score", "Eko", 100);
+        operations.add("score", "Budi", 85);
+        operations.add("score", "Joko", 90);
+
+        assertEquals("Eko", operations.popMax("score").getValue());
+        assertEquals("Joko", operations.popMax("score").getValue());
+        assertEquals("Budi", operations.popMax("score").getValue());
+    }
+
 //    @Test
 //    void hash() {
 //        HashOperations<String, Object, Object> operations = redisTemplate.opsForHash();
